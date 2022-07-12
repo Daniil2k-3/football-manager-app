@@ -7,7 +7,6 @@ import com.example.footballmanager.model.Player;
 import com.example.footballmanager.service.PlayerService;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -55,7 +54,8 @@ public class PlayerController {
     }
 
     @PutMapping("/{id}")
-    public PlayerResponseDto update(@PathVariable Long id, @RequestBody PlayerRequestDto requestDto) {
+    public PlayerResponseDto update(@PathVariable Long id,
+                                    @RequestBody PlayerRequestDto requestDto) {
         Player player = mapper.toModel(requestDto);
         player.setId(id);
         return mapper.toDto(playerService.add(player));

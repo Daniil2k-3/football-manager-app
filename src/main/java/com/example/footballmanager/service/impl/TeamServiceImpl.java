@@ -1,13 +1,10 @@
 package com.example.footballmanager.service.impl;
 
-import com.example.footballmanager.model.Player;
 import com.example.footballmanager.model.Team;
-import com.example.footballmanager.repository.PlayerRepository;
 import com.example.footballmanager.repository.TeamRepository;
 import com.example.footballmanager.service.TeamService;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
+import org.springframework.stereotype.Service;
 
 @Service
 public class TeamServiceImpl implements TeamService {

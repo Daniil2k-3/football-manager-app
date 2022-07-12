@@ -1,6 +1,5 @@
 package com.example.footballmanager.controller;
 
-import com.example.footballmanager.service.TeamService;
 import com.example.footballmanager.service.TransferService;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;

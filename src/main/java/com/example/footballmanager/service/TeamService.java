@@ -1,7 +1,6 @@
 package com.example.footballmanager.service;
 
 import com.example.footballmanager.model.Team;
-
 import java.util.List;
 
 public interface TeamService {

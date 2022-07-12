@@ -4,18 +4,16 @@ import com.example.footballmanager.model.Player;
 import com.example.footballmanager.model.Team;
 import com.example.footballmanager.service.PlayerService;
 import com.example.footballmanager.service.TeamService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class InjectController {
     private final PlayerService playerService;
     private final TeamService teamService;
-
 
     public InjectController(PlayerService playerService, TeamService teamService) {
         this.playerService = playerService;

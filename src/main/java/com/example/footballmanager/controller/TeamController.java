@@ -3,10 +3,10 @@ package com.example.footballmanager.controller;
 import com.example.footballmanager.dto.request.TeamRequestDto;
 import com.example.footballmanager.dto.response.TeamResponseDto;
 import com.example.footballmanager.mapper.DtoMapper;
-import com.example.footballmanager.model.Player;
 import com.example.footballmanager.model.Team;
-import com.example.footballmanager.service.PlayerService;
 import com.example.footballmanager.service.TeamService;
+import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,9 +15,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/teams")

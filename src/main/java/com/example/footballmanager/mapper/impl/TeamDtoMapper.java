@@ -5,10 +5,9 @@ import com.example.footballmanager.dto.response.TeamResponseDto;
 import com.example.footballmanager.mapper.DtoMapper;
 import com.example.footballmanager.model.Player;
 import com.example.footballmanager.model.Team;
+import com.example.footballmanager.service.PlayerService;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import com.example.footballmanager.service.PlayerService;
 import org.springframework.stereotype.Component;
 
 @Component

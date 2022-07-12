@@ -3,9 +3,8 @@ package com.example.footballmanager.util;
 import com.example.footballmanager.exception.TransferException;
 import com.example.footballmanager.model.Player;
 import com.example.footballmanager.model.Team;
-import org.springframework.stereotype.Component;
-
 import java.math.BigDecimal;
+import org.springframework.stereotype.Component;
 
 @Component
 public class TransferValidator {

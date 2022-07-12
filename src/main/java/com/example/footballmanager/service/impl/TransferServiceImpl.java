@@ -4,9 +4,9 @@ import com.example.footballmanager.model.Player;
 import com.example.footballmanager.model.Team;
 import com.example.footballmanager.repository.PlayerRepository;
 import com.example.footballmanager.repository.TeamRepository;
-import java.math.BigDecimal;
 import com.example.footballmanager.service.TransferService;
 import com.example.footballmanager.util.TransferValidator;
+import java.math.BigDecimal;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -40,7 +40,7 @@ public class TransferServiceImpl implements TransferService {
     }
 
     private BigDecimal calculateCost(Player player, Team team) {
-        double cost =  player.getExperienceMonths()
+        double cost = player.getExperienceMonths()
                 * EXPERIENCE_MODIFIER
                 / player.getAge();
         double percent = team.getCommissionPercentage() / 100.0;
