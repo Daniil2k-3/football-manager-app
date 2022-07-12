@@ -21,6 +21,7 @@
         </maven.checkstyle.plugin.configLocation>
     </properties>
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>

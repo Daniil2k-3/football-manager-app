@@ -4,6 +4,7 @@ import com.example.footballmanager.model.Team;
 import com.example.footballmanager.repository.TeamRepository;
 import com.example.footballmanager.service.TeamService;
 import java.util.List;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,8 +26,8 @@ public class TeamServiceImpl implements TeamService {
     }
 
     @Override
-    public List<Team> getAll() {
-        return teamRepository.findAll();
+    public List<Team> getAll(Pageable pageable) {
+        return teamRepository.findAll(pageable).toList();
     }
 
     @Override

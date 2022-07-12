@@ -4,14 +4,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
+    @Length(min = 3, max = 30)
     private String name;
+    @NotNull
+    @Min(value = 16)
+    @Max(value = 50)
     private Integer age;
+    @NotNull
     private Integer experienceMonths;
 
     public Long getId() {

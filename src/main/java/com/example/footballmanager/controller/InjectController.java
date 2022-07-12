@@ -91,16 +91,14 @@ public class InjectController {
         blueList.add(player2);
         blueList.add(player3);
         blueList.add(player4);
-        blueList.add(player5);
         team1.setPlayers(blueList);
         teamService.add(team1);
 
         Team team2 = new Team();
         team2.setTitle("Red team");
         team2.setCommissionPercentage(7);
-        team2.setBudget(BigDecimal.valueOf(580000));
+        team2.setBudget(BigDecimal.valueOf(10000));
         List<Player> redList = new ArrayList<>();
-        redList.add(player6);
         redList.add(player7);
         redList.add(player8);
         redList.add(player9);

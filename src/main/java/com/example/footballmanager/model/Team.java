@@ -9,13 +9,18 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
+    @Length(min = 3, max = 45)
     private String title;
+    @NotNull
     private BigDecimal budget;
     @Min(value = 0)
     @Max(value = 10)

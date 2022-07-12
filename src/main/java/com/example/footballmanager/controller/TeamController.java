@@ -7,6 +7,9 @@ import com.example.footballmanager.model.Team;
 import com.example.footballmanager.service.TeamService;
 import java.util.List;
 import java.util.stream.Collectors;
+import javax.validation.Valid;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -29,7 +33,7 @@ public class TeamController {
     }
 
     @PostMapping
-    public TeamResponseDto add(@RequestBody TeamRequestDto requestDto) {
+    public TeamResponseDto add(@Valid @RequestBody TeamRequestDto requestDto) {
         return mapper.toDto(teamService.add(mapper.toModel(requestDto)));
     }
 
@@ -39,8 +43,10 @@ public class TeamController {
     }
 
     @GetMapping
-    public List<TeamResponseDto> getAll() {
-        return teamService.getAll()
+    public List<TeamResponseDto> getAll(@RequestParam(defaultValue = "0") int page,
+                                        @RequestParam(defaultValue = "20") int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return teamService.getAll(pageable)
                 .stream()
                 .map(mapper::toDto)
                 .collect(Collectors.toList());
