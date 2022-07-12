@@ -12,6 +12,4 @@ public interface PlayerService {
     List<Player> getAll();
 
     void delete(Long id);
-
-    Player update(Player player);
 }

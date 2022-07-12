@@ -58,6 +58,6 @@ public class PlayerController {
     public PlayerResponseDto update(@PathVariable Long id, @RequestBody PlayerRequestDto requestDto) {
         Player player = mapper.toModel(requestDto);
         player.setId(id);
-        return mapper.toDto(playerService.update(player));
+        return mapper.toDto(playerService.add(player));
     }
 }

@@ -1,6 +1,8 @@
 package com.example.footballmanager.service.impl;
 
+import com.example.footballmanager.model.Player;
 import com.example.footballmanager.model.Team;
+import com.example.footballmanager.repository.PlayerRepository;
 import com.example.footballmanager.repository.TeamRepository;
 import com.example.footballmanager.service.TeamService;
 import org.springframework.stereotype.Service;
@@ -33,10 +35,5 @@ public class TeamServiceImpl implements TeamService {
     @Override
     public void delete(Long id) {
         teamRepository.delete(teamRepository.getReferenceById(id));
-    }
-
-    @Override
-    public Team update(Team team) {
-        return teamRepository.save(team);
     }
 }

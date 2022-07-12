@@ -12,6 +12,4 @@ public interface TeamService {
     List<Team> getAll();
 
     void delete(Long id);
-
-    Team update(Team team);
 }

@@ -3,7 +3,9 @@ package com.example.footballmanager.controller;
 import com.example.footballmanager.dto.request.TeamRequestDto;
 import com.example.footballmanager.dto.response.TeamResponseDto;
 import com.example.footballmanager.mapper.DtoMapper;
+import com.example.footballmanager.model.Player;
 import com.example.footballmanager.model.Team;
+import com.example.footballmanager.service.PlayerService;
 import com.example.footballmanager.service.TeamService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -51,7 +53,7 @@ public class TeamController {
     public TeamResponseDto update(@PathVariable Long id, @RequestBody TeamRequestDto requestDto) {
         Team team = mapper.toModel(requestDto);
         team.setId(id);
-        return mapper.toDto(teamService.update(team));
+        return mapper.toDto(teamService.add(team));
     }
 
     @DeleteMapping("/{id}")

@@ -34,9 +34,4 @@ public class PlayerServiceImpl implements PlayerService {
     public void delete(Long id) {
         playerRepository.delete(playerRepository.getReferenceById(id));
     }
-
-    @Override
-    public Player update(Player player) {
-        return playerRepository.save(player);
-    }
 }
