@@ -6,7 +6,7 @@ Transfer process is managing both payment and transfer of a player itself. You c
 ## Setup
 - Clone project to your IDE
 - You can perform /inject request that will populate database with initial players and teams (http://localhost:8080/inject).
-- You also can use attached postman collection to communicate with initial data and update it(https://www.getpostman.com/collections/e57f617f06d2a27f8344)...
+- You also can use attached postman collection to communicate with initial data and update it (https://www.getpostman.com/collections/e57f617f06d2a27f8344)...
 - ...or you can manage teams and players yourself with set of endpoints given below.
 
 ## Endpoints:
