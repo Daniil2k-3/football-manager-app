@@ -1,7 +1,7 @@
 ## Football manager app
 Application that can help you to manage your football teams and players in them. It uses internal H2 database.
 You are able to perform all basic CRUD operations with your individual players and teams, as well as perform transfer of a player from one team to another.
-Transfer process is managing both payment and transfer of a player itself. You can't transfer player that is too expensive to a team that don't have enough money.
+Transfer process is managing both payment and transfer of a player itself. You can't transfer player that is too expensive to a team that don't have enough money or player is absent in initial team, etc..
 
 ## Setup
 - Clone project to your IDE
