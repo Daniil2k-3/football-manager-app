@@ -21,4 +21,5 @@ Transfer process is managing both payment and transfer of a player itself. You c
 - POST http://localhost:8080/players/{id} - updates player with given id
 - POST http://localhost:8080/teams/{id} - updates team with given id
 - POST http://localhost:8080/transfer?playerId={playerID}&teamFromId={teamFromId}}&teamToId={teamToId} - performs transfer of a player with {playerId} from {teamFromId} to {teamToId}.
+#
 You can test these endpoints using postman yourself or using prepared collection(here's the link again https://www.getpostman.com/collections/e57f617f06d2a27f8344 :)
