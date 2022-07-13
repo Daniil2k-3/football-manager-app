@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class TransferServiceImpl implements TransferService {
     private static final double EXPERIENCE_MODIFIER = 100000.0;
+    private static final double PERCENTAGE = 100.0;
 
     private final PlayerRepository playerRepository;
     private final TeamRepository teamRepository;
@@ -42,7 +43,7 @@ public class TransferServiceImpl implements TransferService {
         double cost = player.getExperienceMonths()
                 * EXPERIENCE_MODIFIER
                 / player.getAge();
-        double percent = team.getCommissionPercentage() / 100.0;
+        double percent = team.getCommissionPercentage() / PERCENTAGE;
         cost += cost * percent;
         return BigDecimal.valueOf(cost);
     }
