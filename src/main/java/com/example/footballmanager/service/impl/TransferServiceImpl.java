@@ -32,8 +32,7 @@ public class TransferServiceImpl implements TransferService {
         Team teamTo = teamRepository.getReferenceById(teamToId);
         BigDecimal cost = calculateCost(player, teamFrom);
         transferValidator.validate(cost, teamFrom, teamTo, player);
-        teamFrom.setBudget(teamFrom.getBudget().add(cost));
-        teamTo.setBudget(teamTo.getBudget().subtract(cost));
+        transferMoney(teamFrom, teamTo, cost);
         relocatePlayer(teamFrom, teamTo, player);
         teamRepository.save(teamFrom);
         teamRepository.save(teamTo);
@@ -51,5 +50,10 @@ public class TransferServiceImpl implements TransferService {
     private void relocatePlayer(Team teamFrom, Team teamTo, Player player) {
         teamFrom.getPlayers().remove(player);
         teamTo.getPlayers().add(player);
+    }
+
+    private void transferMoney(Team teamFrom, Team teamTo, BigDecimal money) {
+        teamFrom.setBudget(teamFrom.getBudget().add(money));
+        teamTo.setBudget(teamTo.getBudget().subtract(money));
     }
 }
